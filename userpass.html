@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            console.log("Username: " + username);
+            console.log("Password: " + password);
+            
+            if (username === "JjGuban" && password === "TEST123test") {
+                alert("Welcome " + username);
+            } else if (password.length < 8 || !/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
+                alert("Password should be more than 8 characters and contain both uppercase and lowercase characters.");
+            } else {
+                alert("Invalid username or password.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    
+    <button onclick="validateLogin()">Submit</button>
+</body>
+</html>
